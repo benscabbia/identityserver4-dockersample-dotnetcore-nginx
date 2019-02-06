@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+
+  sampleapp.api:
+    image: sampleapp.api
+    container_name: sampleapp.api
+    build: SampleApp.API
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  sampleapp.authentication:
+    image: sampleapp.authentication
+    container_name: sampleapp.authentication
+    build: SampleApp.Authentication
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  sampleapp.proxy:
+    image: sampleapp.proxy
+    container_name: sampleapp.proxy
+    build: 
+      context: SampleApp.Proxy
+      dockerfile: Dockerfile.development
+    ports:
+      - 443:443
