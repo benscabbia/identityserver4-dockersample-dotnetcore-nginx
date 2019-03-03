@@ -50,7 +50,10 @@ namespace SampleApp.Authentication
                 app.UseHsts();
             }
 
-            app.UseIdentityServer();
+            app.Map("/authentication", builder =>
+            {
+                builder.UseIdentityServer();
+            });
         }
     }
 }

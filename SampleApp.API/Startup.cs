@@ -31,8 +31,8 @@ namespace SampleApp.API
                 .AddIdentityServerAuthentication(options =>
                 {
                     // Debugging 
-                    // options.Authority = "http://localhost:4000";
-                    options.Authority = "http://sampleapp.authentication";
+                    // options.Authority = "http://localhost:4000/authentication";
+                    options.Authority = "http://sampleapp.authentication/authentication";
                     options.RequireHttpsMetadata = false;
                     options.ApiName = "SampleApp.API";
                 });
